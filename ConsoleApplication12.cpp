@@ -3,25 +3,15 @@
 
 long long factorial(int n)
 {
-	long long sum = 1;
-	while (n != 0)
-	{
-		sum *= n;
-		n -= 1;
-	}
-	return sum;
+	if (n == 1) return 1;
+	return n * factorial(n - 1);
 }
 
 
 double degree(double x, int n)
 {
-	double work = 1;
-	while (n != 0)
-	{
-		work *= x;
-		n -= 1;
-	}
-	return work;
+	if (n == 1) return x;
+	return (x * degree(x, n - 1));
 }
 
 double sumForSin(int n, double x)
