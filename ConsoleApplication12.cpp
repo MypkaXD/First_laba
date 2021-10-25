@@ -2,16 +2,30 @@
 
 long double fact(unsigned long int n)
 {
-	while (n > 1)
-		return (n * fact(n - 1));
-	return 1;
+	if (n == 1)
+		return 1;
+	else if (n == 0)
+		return 1;
+	else if (n < 0)
+		std::cout << "Неверное значение n" << std::endl;
+	else if (n > 1)
+	{
+		while (n > 1)
+			return (n * fact(n - 1));
+	}
 }
 
 long double degree(int n, double x)
 {
-	while (n != 1)
-		return (degree((n - 1), x) * x);
-	return x;
+	if (n == 1)
+		return x;
+	else if (n == 0)
+		return 1;
+	else if (n > 1)
+	{
+		while (n != 1)
+			return (degree((n - 1), x) * x);
+	}
 }
 
 long double sumExp(unsigned long int n, long double x)
